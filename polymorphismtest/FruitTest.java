@@ -1,5 +1,12 @@
 package polymorphismtest;
-
+/**
+ * 필드는 인스턴스
+ * 일반 메서드는 타입을 봄
+ * 오버라이딩 메서드는 인스턴스를 봄
+ * 
+ * @author PC-17
+ *
+ */
 public class FruitTest {
 	
 	public static void main(String[] args) {
@@ -16,10 +23,18 @@ public class FruitTest {
 		
 //		f.test3();
 		a.test3();
+		
+		f.getName();
+		a.getName();
 	}
 }
 
 class Apple extends Fruit {
+	private String name = "자식필드";
+	
+	public void getName() {
+		System.out.println(name);
+	}
 	
 	public void testP() {
 		System.out.println("메서드 testP : Apple1");
@@ -37,6 +52,11 @@ class Apple extends Fruit {
 }
 
 class Fruit {
+	private String name = "부모필드";
+	
+	public void getName() {
+		System.out.println(name);
+	}
 	
 	public void testP() {
 		System.out.println("메서드 testp : Fruit1");
